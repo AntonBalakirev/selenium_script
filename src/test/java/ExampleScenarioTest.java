@@ -40,22 +40,22 @@ public class ExampleScenarioTest {
         }
 
         // выбрать пункт подменю - "Перейти в каталог"
-        String sberInsuranceButtonXPath = "//a[text()='Перейти в каталог' and contains(@class, 'link_second')]";
-        WebElement travellersInsuranceButton = driver.findElement(By.xpath(sberInsuranceButtonXPath));
+        String travellersInsuranceButtonXPath = "//a[text()='Путешествия' and contains(@class, 'link_second')]";
+        WebElement travellersInsuranceButton = driver.findElement(By.xpath(travellersInsuranceButtonXPath));
         travellersInsuranceButton.click();
 
-        // проверка открытия страницы "Страхование"
+        // проверка открытия страницы "Страхование для путешественников"
         Assert.assertEquals("Заголовок отсутствует/не соответствует требуемому",
-                "Оформить страховку в СберБанке — СберБанк", driver.getTitle());
-
-        // перейти к опции "Страхование путешественников"
-        String travellersInsuranceHeaderXPath = "//h3[text()='Страхование для путешественников']";
-        WebElement travellersInsuranceHeader = driver.findElement(By.xpath(travellersInsuranceHeaderXPath));
-        scrollToElementJs(travellersInsuranceHeader);
+                "Страхование для путешественников — СберБанк", driver.getTitle());
+//
+//        // перейти к опции "Страхование путешественников"
+//        String travellersInsuranceHeaderXPath = "//h3[text()='Страхование для путешественников']";
+//        WebElement travellersInsuranceHeader = driver.findElement(By.xpath(travellersInsuranceHeaderXPath));
+//        scrollToElementJs(travellersInsuranceHeader);
 
         // нажать кнопку "Оформить онлайн"
-        String checkoutOnlineXPath = "../../following-sibling::div//b[text()='Оформить онлайн']/..";
-        WebElement checkoutOnlineButton = travellersInsuranceHeader.findElement(By.xpath(checkoutOnlineXPath));
+        String checkoutOnlineXPath = "//a[@data-test-id='PageTeaserDict_button']";
+        WebElement checkoutOnlineButton = driver.findElement(By.xpath(checkoutOnlineXPath));
         waitUtilElementToBeClickable(checkoutOnlineButton);
         checkoutOnlineButton.click();
 
