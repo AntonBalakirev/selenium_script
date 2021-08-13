@@ -47,11 +47,6 @@ public class ExampleScenarioTest {
         // проверка открытия страницы "Страхование для путешественников"
         Assert.assertEquals("Заголовок отсутствует/не соответствует требуемому",
                 "Страхование для путешественников — СберБанк", driver.getTitle());
-//
-//        // перейти к опции "Страхование путешественников"
-//        String travellersInsuranceHeaderXPath = "//h3[text()='Страхование для путешественников']";
-//        WebElement travellersInsuranceHeader = driver.findElement(By.xpath(travellersInsuranceHeaderXPath));
-//        scrollToElementJs(travellersInsuranceHeader);
 
         // нажать кнопку "Оформить онлайн"
         String checkoutOnlineXPath = "//a[@data-test-id='PageTeaserDict_button']";
