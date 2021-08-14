@@ -42,6 +42,7 @@ public class ExampleScenarioTest {
         // выбрать пункт подменю - "Перейти в каталог"
         String travellersInsuranceButtonXPath = "//a[text()='Путешествия' and contains(@class, 'link_second')]";
         WebElement travellersInsuranceButton = driver.findElement(By.xpath(travellersInsuranceButtonXPath));
+        waitUtilElementToBeClickable(travellersInsuranceButton);
         travellersInsuranceButton.click();
 
         // проверка открытия страницы "Страхование для путешественников"
