@@ -35,7 +35,7 @@ public class ExampleScenarioTest {
         // выбрать пункт меню - "Страхование"
         String insuranceButtonXPath = "//a[@aria-label='Страхование']";
         List<WebElement> insuranceButtonList = driver.findElements(By.xpath(insuranceButtonXPath));
-        if (!insuranceButtonList.isEmpty()){
+        if (!insuranceButtonList.isEmpty()) {
             insuranceButtonList.get(0).click();
         }
 
@@ -112,7 +112,7 @@ public class ExampleScenarioTest {
     }
 
     @After
-    public void after(){
+    public void after() {
         driver.quit();
     }
 
